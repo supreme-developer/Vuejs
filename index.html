@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width">
+    <title>vuejs study</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <body>
+        <div id="app">
+            <!-- 머스태쉬 태그 사용시 -->
+            <!-- <h1>Hello, {{name}}</h1> --> 
+            
+            <!-- directive 사용시 -->
+            <h1>카운터: {{ number }}</h1>
+            <!-- <button v-on:click="increment">증가</button>
+            <button v-on:click="decrement">감소</button> -->
+            <button @click="increment">증가</button>
+            <button @click="decrement">감소</button>
+            <h1>Hello, 
+                <span v-text="name"></span>
+            </h1>
+            <input type="text" v-model="name"/>
+            <h3><input type="checkbox" v-model="isAdd"/>변해라</h3>
+            <h2>{{ Date() }}</h2>
+            <img v-bind:src="isAdd ? feelsgood : feelsbad">
+           
+        </div>
+         
+        <script>
+            var app = new Vue({
+            el: '#app',
+            data: {
+                number: 0,
+                name: 'Vue!',
+                isAdd : false,
+                feelsgood : 'https://vuejs.org/images/logo.png',
+                feelsbad : 'https://cloud.githubusercontent.com/assets/4476469/19305302/3861605a-90ab-11e6-82b6-5b4690c9ae44.png'
+            },
+            methods: {
+                increment: function() { 
+                    this.number++;
+                },
+                decrement: function() {
+                    this.number--;
+                }
+            }
+          })
+        </script>
+       
+    </body>
+</html>
