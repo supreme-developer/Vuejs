@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width">
+    <title>vuejs study</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+    <body>
+        <div id="person">
+            <h1> hello {{name}}</h1>
+            <h2> 좋아하는 과일</h2>
+            <ul>
+                <li v-for="fruit in favorite">
+                    <a v-bind:href="'#' + fruit">{{fruit}}</a>
+                </li>
+            </ul>
+        </div>
+         
+        <script>
+            var person = new Vue({
+            el: '#person',
+            data: {
+                name: 'seunga',
+                favorite : ['수박', '귤', '사과']
+            }
+          })
+        </script>
+       
+    </body>
+</html>
